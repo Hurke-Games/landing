@@ -1,0 +1,6 @@
+{
+  "name": "Hurke Games",
+  "description": "Responsive indie games landing page showcasing browser games including Poop Fly and Galactic Clash.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
