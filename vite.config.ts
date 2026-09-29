@@ -1,15 +1,26 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+import path from 'path';
+import {defineConfig} from 'vite';
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ command }) => {
   return {
-    // Base URL configuration for GitHub Pages deployment under https://hurke-games.github.io/landing/
-    base: process.env.BASE_URL || (mode === 'production' ? '/landing/' : '/'),
+    base: command === 'build' ? (process.env.BASE_PATH || '/landing/') : '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
-        '@': import.meta.dirname,
+        '@': path.resolve(__dirname, '.'),
+      },
+    },
+    build: {
+      outDir: 'dist',
+      assetsDir: 'assets',
+      rollupOptions: {
+        output: {
+          entryFileNames: 'assets/[name].js',
+          chunkFileNames: 'assets/[name].js',
+          assetFileNames: 'assets/[name].[ext]',
+        },
       },
     },
     server: {
