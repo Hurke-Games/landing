@@ -1,20 +1,30 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
-import path from 'path';
-import {defineConfig} from 'vite';
+import { defineConfig, Plugin } from 'vite';
 
-export default defineConfig(({ command }) => {
+function devHtmlPlugin(): Plugin {
   return {
-    base: command === 'build' ? (process.env.BASE_PATH || '/landing/') : '/',
-    plugins: [react(), tailwindcss()],
+    name: 'dev-html-transform',
+    transformIndexHtml(html) {
+      return html
+        .replace(/<script type="module" crossorigin src="[^"]*assets\/index\.js"><\/script>/, '<script type="module" src="/src/main.tsx"></script>')
+        .replace(/<link rel="stylesheet" crossorigin href="[^"]*assets\/index\.css">/, '');
+    },
+  };
+}
+
+export default defineConfig(({ mode }) => {
+  return {
+    // Base URL configuration for GitHub Pages deployment under https://hurke-games.github.io/landing/
+    base: process.env.BASE_URL || (mode === 'production' ? '/landing/' : '/'),
+    plugins: [devHtmlPlugin(), react(), tailwindcss()],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': import.meta.dirname,
       },
     },
     build: {
       outDir: 'dist',
-      assetsDir: 'assets',
       rollupOptions: {
         output: {
           entryFileNames: 'assets/[name].js',
