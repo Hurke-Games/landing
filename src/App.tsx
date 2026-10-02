@@ -14,7 +14,7 @@ import { Footer } from './components/Footer';
 import { INITIAL_GAMES, GameItem } from './data/games';
 import { Sparkles } from 'lucide-react';
 
-const STORAGE_KEY = 'hurke_games_catalog_v1';
+const STORAGE_KEY = 'hurke_games_catalog_v2';
 
 // Helper to determine if current URL is targeting admin tools
 function checkIsAdminRoute(): boolean {
@@ -100,19 +100,11 @@ export default function App() {
     }
   }, [games]);
 
-  const handleAddGame = (newGame: GameItem) => {
-    setGames((prev) => [newGame, ...prev]);
-  };
-
-  const handleDeleteGame = (id: string) => {
-    setGames((prev) => prev.filter((g) => g.id !== id));
-  };
-
   // Filter logic
   const filteredGames = games.filter((game) => {
     if (activeFilter === 'all') return true;
     if (activeFilter === 'arcade') return game.genre.toLowerCase().includes('arcade');
-    if (activeFilter === 'strategy') return game.genre.toLowerCase().includes('strategy') || game.genre.toLowerCase().includes('sci-fi');
+    if (activeFilter === 'strategy') return game.genre.toLowerCase().includes('strategy') || game.genre.toLowerCase().includes('sci-fi') || game.genre.toLowerCase().includes('rts');
     if (activeFilter === 'custom') return game.isCustom;
     return true;
   });
@@ -204,7 +196,6 @@ export default function App() {
                 key={game.id}
                 game={game}
                 onPlayGame={(g) => setSelectedGameForPlay(g)}
-                onDelete={handleDeleteGame}
               />
             ))}
           </div>
@@ -233,13 +224,11 @@ export default function App() {
       {/* Quiet Footer without visible admin links */}
       <Footer />
 
-      {/* Consolidated Admin & HTML Tools Modal (accessible via /landing/admin or Ctrl+Shift+A) */}
+      {/* Consolidated Developer & Code Tools Modal (accessible via /landing/admin or Ctrl+Shift+A) */}
       <AdminModal
         isOpen={isAdminModalOpen}
         onClose={handleCloseAdmin}
         games={games}
-        onAddGame={handleAddGame}
-        onDeleteGame={handleDeleteGame}
       />
 
       {/* In-app Game Player Session */}

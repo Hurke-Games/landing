@@ -6,6 +6,7 @@
 
 import poopFlyImg from '../assets/images/poop_fly_screenshot.svg';
 import galacticClashImg from '../assets/images/galactic_clash_screenshot.svg';
+import fleetCommandImg from '../assets/images/fleet_command_screenshot_1790979237310.jpg';
 
 export interface GameItem {
   id: string;
@@ -23,6 +24,19 @@ export interface GameItem {
 }
 
 export const INITIAL_GAMES: GameItem[] = [
+  {
+    id: 'fleet-command',
+    title: 'Fleet Command',
+    url: 'https://hurke-games.github.io/Fleet-Command/',
+    tagline: 'Tactical Real-Time Space Conquest Across 50 Sectors',
+    description: 'Command planetary sectors, deploy heavy cruisers, launch automated mining fleets, and orchestrate orbital assaults against rival AI commanders.',
+    detailedDescription: 'A minimalist 2D real-time space conquest strategy game with procedural planetary sectors, continuous fleet routing, and adaptive AI commanders. Capture starbases like Aegis Prime, extract celestial ore, and coordinate tactical defensive swarms across a 50-sector campaign.',
+    genre: 'Space RTS',
+    releaseYear: '2026',
+    platforms: ['Desktop Browser', 'Tablets', 'Mobile Web'],
+    controls: 'Right-click or Drag to route fleets; 1-4 for Game Speed; Space to Pause; F for Fullscreen',
+    image: fleetCommandImg,
+  },
   {
     id: 'poop-fly',
     title: 'Poop Fly',
@@ -95,7 +109,7 @@ export function generateFullStandaloneHtml(games: GameItem[]): string {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hurke Games | Indie Web Games Studio</title>
-  <meta name="description" content="Explore browser games by Hurke Games including Poop Fly and Galactic Clash.">
+  <meta name="description" content="Explore browser games by Hurke Games including Fleet Command, Poop Fly, and Galactic Clash.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
