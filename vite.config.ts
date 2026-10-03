@@ -1,23 +1,12 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
-import { defineConfig, Plugin } from 'vite';
-
-function devHtmlPlugin(): Plugin {
-  return {
-    name: 'dev-html-transform',
-    transformIndexHtml(html) {
-      return html
-        .replace(/<script type="module" crossorigin src="[^"]*assets\/index\.js"><\/script>/, '<script type="module" src="/src/main.tsx"></script>')
-        .replace(/<link rel="stylesheet" crossorigin href="[^"]*assets\/index\.css">/, '');
-    },
-  };
-}
+import { defineConfig } from 'vite';
 
 export default defineConfig(({ mode }) => {
   return {
     // Base URL configuration for GitHub Pages deployment under https://hurke-games.github.io/landing/
     base: process.env.BASE_URL || (mode === 'production' ? '/landing/' : '/'),
-    plugins: [devHtmlPlugin(), react(), tailwindcss()],
+    plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
         '@': import.meta.dirname,

@@ -16,6 +16,24 @@
   <body class="min-h-screen bg-neutral-950 text-neutral-100 antialiased selection:bg-amber-500/20 selection:text-amber-200">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script type="module">
+      setTimeout(() => {
+        const root = document.getElementById('root');
+        if (root && root.children.length === 0) {
+          const l = document.createElement('link');
+          l.rel = 'stylesheet';
+          l.crossOrigin = 'anonymous';
+          l.href = '/landing/assets/index.css';
+          document.head.appendChild(l);
+
+          const s = document.createElement('script');
+          s.type = 'module';
+          s.crossOrigin = 'anonymous';
+          s.src = '/landing/assets/index.js';
+          document.body.appendChild(s);
+        }
+      }, 50);
+    </script>
   </body>
 </html>
 
