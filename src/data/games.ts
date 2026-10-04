@@ -7,6 +7,7 @@
 import poopFlyImg from '../assets/images/poop_fly_screenshot.svg';
 import galacticClashImg from '../assets/images/galactic_clash_screenshot.svg';
 import fleetCommandImg from '../assets/images/fleet_command_screenshot_1790979237310.jpg';
+import tankWarsImg from '../assets/images/tank_wars_screenshot_1791080912049.jpg';
 
 export interface GameItem {
   id: string;
@@ -24,6 +25,19 @@ export interface GameItem {
 }
 
 export const INITIAL_GAMES: GameItem[] = [
+  {
+    id: 'tank-wars',
+    title: 'Tank Wars: Advance Grid',
+    url: 'https://hurke-games.github.io/Tank-wars/',
+    tagline: '32-Bit GBA Style Turn-Based Tactical Grid Warfare',
+    description: 'Turn-based tactical wargame with procedural maps, custom scenario builder, tactical AI commanders, supply-line sieges, and armored warfare.',
+    detailedDescription: 'A retro-modern 32-bit tactical grid strategy game inspired by classic handheld wargames. Deploy armor battalions, secure neutral cities to expand production, maintain vital supply routes, and clash against reactive AI commanders across dynamic combat theaters.',
+    genre: 'Turn-Based Tactics',
+    releaseYear: '2026',
+    platforms: ['Desktop Browser', 'Mobile Touch', 'Mouse / Keyboard'],
+    controls: 'R-Click Drag: Move Map; R-Click: Pickup Tank; L-Click: Deploy / Attack; Wheel: Zoom; End Day to pass turn',
+    image: tankWarsImg,
+  },
   {
     id: 'fleet-command',
     title: 'Fleet Command',
@@ -109,7 +123,7 @@ export function generateFullStandaloneHtml(games: GameItem[]): string {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hurke Games | Indie Web Games Studio</title>
-  <meta name="description" content="Explore browser games by Hurke Games including Fleet Command, Poop Fly, and Galactic Clash.">
+  <meta name="description" content="Explore browser games by Hurke Games including Tank Wars, Fleet Command, Poop Fly, and Galactic Clash.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">

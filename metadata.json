@@ -1,6 +1,6 @@
 {
   "name": "Hurke Games",
-  "description": "Responsive indie games landing page showcasing browser games including Fleet Command, Poop Fly, and Galactic Clash.",
+  "description": "Responsive indie games landing page showcasing browser games including Tank Wars, Fleet Command, Poop Fly, and Galactic Clash.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
