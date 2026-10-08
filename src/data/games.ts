@@ -8,6 +8,7 @@ import poopFlyImg from '../assets/images/poop_fly_screenshot.svg';
 import galacticClashImg from '../assets/images/galactic_clash_screenshot.svg';
 import fleetCommandImg from '../assets/images/fleet_command_screenshot_1790979237310.jpg';
 import tankWarsImg from '../assets/images/tank_wars_screenshot_1791080912049.jpg';
+import zombieSurvivorImg from '../assets/images/zombie_survivor_screen_1791424108082.jpg';
 
 export interface GameItem {
   id: string;
@@ -25,6 +26,19 @@ export interface GameItem {
 }
 
 export const INITIAL_GAMES: GameItem[] = [
+  {
+    id: 'zombie-survivor',
+    title: 'Zombie Survivor',
+    url: 'https://hurke-games.github.io/Zombie-Survivor/',
+    tagline: 'Top-Down Tactical Apocalypse Survival & Colony Defense',
+    description: 'Scavenge supplies, fortify safehouses, manage calories and hydration, recruit survivors, and endure dynamic day/night undead hordes.',
+    detailedDescription: 'An intense tactical top-down survival simulation set in Knox County. Scavenge suburban sectors, manage vital calorie and hydration meters, craft defensive barriers and workbenches, and track evolving undead horde phases alongside an active Overseer AI satellite telemetry system.',
+    genre: 'Survival Sim',
+    releaseYear: '2026',
+    platforms: ['Desktop Browser', 'Keyboard & Mouse', 'Mobile Web'],
+    controls: 'WASD: Move; F: Interact/Loot; B: Build; H: Workbench; E: Equipment; U/Y: Food & Water; Scroll: Hand Item; K: Colony',
+    image: zombieSurvivorImg,
+  },
   {
     id: 'tank-wars',
     title: 'Tank Wars: Advance Grid',
@@ -123,7 +137,7 @@ export function generateFullStandaloneHtml(games: GameItem[]): string {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hurke Games | Indie Web Games Studio</title>
-  <meta name="description" content="Explore browser games by Hurke Games including Tank Wars, Fleet Command, Poop Fly, and Galactic Clash.">
+  <meta name="description" content="Explore browser games by Hurke Games including Zombie Survivor, Tank Wars, Fleet Command, Poop Fly, and Galactic Clash.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">

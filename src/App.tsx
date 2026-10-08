@@ -103,8 +103,8 @@ export default function App() {
   // Filter logic
   const filteredGames = games.filter((game) => {
     if (activeFilter === 'all') return true;
-    if (activeFilter === 'arcade') return game.genre.toLowerCase().includes('arcade');
-    if (activeFilter === 'strategy') return game.genre.toLowerCase().includes('strategy') || game.genre.toLowerCase().includes('tactics') || game.genre.toLowerCase().includes('sci-fi') || game.genre.toLowerCase().includes('rts');
+    if (activeFilter === 'arcade') return game.genre.toLowerCase().includes('arcade') || game.genre.toLowerCase().includes('survival');
+    if (activeFilter === 'strategy') return game.genre.toLowerCase().includes('strategy') || game.genre.toLowerCase().includes('tactics') || game.genre.toLowerCase().includes('sci-fi') || game.genre.toLowerCase().includes('rts') || game.genre.toLowerCase().includes('survival');
     if (activeFilter === 'custom') return game.isCustom;
     return true;
   });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Play, Sparkles, Crosshair, Compass, Shield, Zap, Radio, Map } from 'lucide-react';
+import { ExternalLink, Play, Sparkles, Crosshair, Compass, Shield, Zap, Radio, Map, Activity, Hammer } from 'lucide-react';
 import { GameItem } from '../data/games';
 
 interface GameDeepDiveProps {
@@ -11,6 +11,7 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
   games,
   onPlayGame,
 }) => {
+  const zombieSurvivor = games.find((g) => g.id === 'zombie-survivor');
   const tankWars = games.find((g) => g.id === 'tank-wars');
   const fleetCommand = games.find((g) => g.id === 'fleet-command');
   const galacticClash = games.find((g) => g.id === 'galactic-clash');
@@ -34,14 +35,91 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
           </p>
         </div>
 
-        {/* Featured Breakdowns: 2x2 Grid for 4 Games */}
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Featured Breakdowns: Responsive Grid for 5 Games */}
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
-          {/* Game 1: Tank Wars */}
+          {/* Game 1: Zombie Survivor */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-emerald-400 font-semibold">01. 32-BIT TURN-BASED TACTICS</span>
+                <span className="text-red-400 font-semibold">01. TACTICAL SURVIVAL SIM</span>
+                <span>GITHUB PAGES</span>
+              </div>
+              
+              <h3 className="font-heading text-2xl font-bold text-white">
+                Zombie Survivor
+              </h3>
+              
+              <p className="mt-2 text-sm text-neutral-300 leading-relaxed">
+                An intense top-down apocalypse survival simulation set in Knox County. Fortify safehouses, manage calorie & hydration meters, and survive dynamic horde migrations.
+              </p>
+
+              {/* Core Mechanics List */}
+              <div className="mt-6 space-y-3">
+                <div className="flex items-start gap-3 text-xs text-neutral-300">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-red-500/10 text-red-400 border border-red-500/20">
+                    <Hammer className="h-3.5 w-3.5" />
+                  </div>
+                  <div>
+                    <strong className="text-white block font-medium">Safehouse Barricades & Workbenches:</strong>
+                    Craft barricades, chests, and equipment rigs to reinforce your perimeter against nightfall horde incursions.
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 text-xs text-neutral-300">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-red-500/10 text-red-400 border border-red-500/20">
+                    <Activity className="h-3.5 w-3.5" />
+                  </div>
+                  <div>
+                    <strong className="text-white block font-medium">Calorie & Hydration Survival Loop:</strong>
+                    Monitor vital food [U] and water [Y] reserves, scavenging suburban kitchens while avoiding infected danger zones.
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 text-xs text-neutral-300">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-red-500/10 text-red-400 border border-red-500/20">
+                    <Radio className="h-3.5 w-3.5" />
+                  </div>
+                  <div>
+                    <strong className="text-white block font-medium">Overseer AI & God-View Telemetry:</strong>
+                    Satellite surveillance feed tracks regional weather, municipal grid states, and daylight vs. night horde activity phases.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-neutral-800/80 flex flex-col gap-3">
+              <span className="font-mono text-xs text-neutral-400">
+                Desktop Keyboard & Mouse / Mobile Web
+              </span>
+              {zombieSurvivor && (
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => onPlayGame(zombieSurvivor)}
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg border border-neutral-700 bg-neutral-800 px-3 py-1.5 text-xs font-semibold text-neutral-200 hover:text-white hover:border-neutral-600 transition-colors"
+                  >
+                    <Play className="h-3 w-3 text-amber-400 fill-current" />
+                    <span>Play</span>
+                  </button>
+                  <a
+                    href={zombieSurvivor.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg bg-amber-400 px-3.5 py-1.5 text-xs font-bold text-neutral-950 hover:bg-amber-300 transition-colors"
+                  >
+                    <span>Launch</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Game 2: Tank Wars */}
+          <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
+            <div>
+              <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
+                <span className="text-emerald-400 font-semibold">02. 32-BIT TURN-BASED TACTICS</span>
                 <span>GITHUB PAGES</span>
               </div>
               
@@ -114,11 +192,11 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
             </div>
           </div>
 
-          {/* Game 2: Fleet Command */}
+          {/* Game 3: Fleet Command */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-cyan-400 font-semibold">02. TACTICAL REAL-TIME RTS</span>
+                <span className="text-cyan-400 font-semibold">03. TACTICAL REAL-TIME RTS</span>
                 <span>GITHUB PAGES</span>
               </div>
               
@@ -191,11 +269,11 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
             </div>
           </div>
 
-          {/* Game 3: Galactic Clash */}
+          {/* Game 4: Galactic Clash */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-amber-400 font-semibold">03. 4X TACTICAL SPACE</span>
+                <span className="text-amber-400 font-semibold">04. 4X TACTICAL SPACE</span>
                 <span>GITHUB PAGES</span>
               </div>
               
@@ -268,11 +346,11 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
             </div>
           </div>
 
-          {/* Game 4: Poop Fly */}
+          {/* Game 5: Poop Fly */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-amber-400 font-semibold">04. SIDE-SCROLLING SURVIVAL</span>
+                <span className="text-amber-400 font-semibold">05. SIDE-SCROLLING SURVIVAL</span>
                 <span>GITHUB PAGES</span>
               </div>
               
