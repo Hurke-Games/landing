@@ -9,6 +9,7 @@ import galacticClashImg from '../assets/images/galactic_clash_screenshot.svg';
 import fleetCommandImg from '../assets/images/fleet_command_screenshot_1790979237310.jpg';
 import tankWarsImg from '../assets/images/tank_wars_screenshot_1791080912049.jpg';
 import zombieSurvivorImg from '../assets/images/zombie_survivor_screen_1791424108082.jpg';
+import mrMayorImg from '../assets/images/mr_mayor_screenshot_1791664196945.jpg';
 
 export interface GameItem {
   id: string;
@@ -26,6 +27,19 @@ export interface GameItem {
 }
 
 export const INITIAL_GAMES: GameItem[] = [
+  {
+    id: 'mr-mayor',
+    title: 'Mr. Mayor',
+    url: 'https://hurke-games.github.io/Mr-Mayor/',
+    tagline: '5-Year Election Cycle & Political City Power Simulation',
+    description: 'Step into the contested arena of urban power in New Veridia. Navigate 5-year election cycles, municipal zoning, public grievances, and civic faction politics.',
+    detailedDescription: 'A real-time political city simulation where power, corruption, and truth are contested systems. Take the oath of office in City Hall as Mayor to zone districts and balance municipal budgets, climb from honest commerce to corporate magnate as Business Man, or prepare for upcoming roles as Police Chief and Investigative Journalist.',
+    genre: 'Political Sim',
+    releaseYear: '2026',
+    platforms: ['Desktop Browser', 'Tablets', 'Mobile Web'],
+    controls: 'Click / Tap to zone districts, allocate municipal budgets, manage grievances, and campaign for election',
+    image: mrMayorImg,
+  },
   {
     id: 'zombie-survivor',
     title: 'Zombie Survivor',
@@ -137,7 +151,7 @@ export function generateFullStandaloneHtml(games: GameItem[]): string {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hurke Games | Indie Web Games Studio</title>
-  <meta name="description" content="Explore browser games by Hurke Games including Zombie Survivor, Tank Wars, Fleet Command, Poop Fly, and Galactic Clash.">
+  <meta name="description" content="Explore browser games by Hurke Games including Mr. Mayor, Zombie Survivor, Tank Wars, Fleet Command, Poop Fly, and Galactic Clash.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -479,7 +493,9 @@ export function generateFullStandaloneHtml(games: GameItem[]): string {
       <div class="hero-meta">
         <span>${games.length} Live Titles</span>
         <span aria-hidden="true">·</span>
-        <span>Updated 2026</span>
+        <span>Active Development</span>
+        <span aria-hidden="true">·</span>
+        <span>Feedback: <a href="mailto:hurkegames@gmail.com" style="color: var(--accent); text-decoration: underline;">hurkegames@gmail.com</a></span>
       </div>
     </div>
   </section>
@@ -490,7 +506,7 @@ export function generateFullStandaloneHtml(games: GameItem[]): string {
       <div class="section-header">
         <div>
           <h2 class="section-title">Playable Games</h2>
-          <p class="section-subtitle">Select a game below to launch directly in your browser.</p>
+          <p class="section-subtitle">Select a game below to launch directly in your browser. All titles are in active development; email suggestions to hurkegames@gmail.com.</p>
         </div>
       </div>
 
@@ -504,7 +520,7 @@ export function generateFullStandaloneHtml(games: GameItem[]): string {
   <!-- Quiet Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 Hurke Games. Independent game studio published on GitHub Pages.</p>
+      <p>&copy; 2026 Hurke Games. Independent game studio published on GitHub Pages. Games under active development — feedback & suggestions welcome at <a href="mailto:hurkegames@gmail.com" style="color: var(--accent);">hurkegames@gmail.com</a>.</p>
     </div>
   </footer>
 

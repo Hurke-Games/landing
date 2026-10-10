@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, Gamepad2, Sparkles } from 'lucide-react';
+import { ArrowDown, Gamepad2, Sparkles, Mail, Hammer } from 'lucide-react';
 import heroImg from '../assets/images/hurke_games_hero_1790641592502.jpg';
 
 interface HeroProps {
@@ -55,7 +55,7 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
 
         {/* Action CTAs */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <a
             href="#games"
             className="inline-flex items-center gap-2 rounded-lg bg-white px-7 py-3 text-sm font-semibold text-neutral-950 hover:bg-neutral-200 transition-colors shadow-lg active:scale-95"
@@ -71,6 +71,25 @@ export const Hero: React.FC<HeroProps> = ({
           >
             About Mechanics
           </a>
+        </div>
+
+        {/* Development Notice & Community Feedback Callout */}
+        <div className="mx-auto mt-8 max-w-xl rounded-xl border border-amber-500/25 bg-amber-500/5 p-4 backdrop-blur-sm">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+            <div className="flex items-center gap-2.5 text-neutral-300 text-left">
+              <Hammer className="h-4 w-4 text-amber-400 shrink-0" />
+              <span>
+                <strong className="text-white font-semibold">Active Development:</strong> These titles are in active development. Have ideas or feedback?
+              </span>
+            </div>
+            <a
+              href="mailto:hurkegames@gmail.com?subject=Hurke%20Games%20Feedback%20%26%20Suggestions"
+              className="inline-flex items-center gap-1.5 shrink-0 rounded-lg bg-amber-400 px-3.5 py-1.5 font-sans text-xs font-bold text-neutral-950 hover:bg-amber-300 transition-colors shadow-sm"
+            >
+              <Mail className="h-3.5 w-3.5" />
+              <span>Email Suggestions</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

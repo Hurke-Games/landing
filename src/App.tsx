@@ -12,7 +12,7 @@ import { AdminModal } from './components/AdminModal';
 import { GamePlayerModal } from './components/GamePlayerModal';
 import { Footer } from './components/Footer';
 import { INITIAL_GAMES, GameItem } from './data/games';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, Mail, Wrench } from 'lucide-react';
 
 const STORAGE_KEY = 'hurke_games_catalog_v2';
 
@@ -104,7 +104,7 @@ export default function App() {
   const filteredGames = games.filter((game) => {
     if (activeFilter === 'all') return true;
     if (activeFilter === 'arcade') return game.genre.toLowerCase().includes('arcade') || game.genre.toLowerCase().includes('survival');
-    if (activeFilter === 'strategy') return game.genre.toLowerCase().includes('strategy') || game.genre.toLowerCase().includes('tactics') || game.genre.toLowerCase().includes('sci-fi') || game.genre.toLowerCase().includes('rts') || game.genre.toLowerCase().includes('survival');
+    if (activeFilter === 'strategy') return game.genre.toLowerCase().includes('strategy') || game.genre.toLowerCase().includes('tactics') || game.genre.toLowerCase().includes('sci-fi') || game.genre.toLowerCase().includes('rts') || game.genre.toLowerCase().includes('survival') || game.genre.toLowerCase().includes('sim') || game.genre.toLowerCase().includes('political');
     if (activeFilter === 'custom') return game.isCustom;
     return true;
   });
@@ -187,6 +187,43 @@ export default function App() {
                 )}
               </div>
             </div>
+          </div>
+
+          {/* Active Development & Community Suggestions Notice */}
+          <div className="mb-10 rounded-2xl border border-amber-500/20 bg-gradient-to-r from-amber-500/10 via-neutral-900/60 to-neutral-900/40 p-5 sm:p-6 backdrop-blur-sm flex flex-col md:flex-row md:items-center justify-between gap-5">
+            <div className="flex items-start sm:items-center gap-4">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-400/15 border border-amber-400/30 text-amber-400">
+                <Wrench className="h-5 w-5" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h3 className="text-base font-bold text-white font-heading">
+                    Games Under Active Development
+                  </h3>
+                  <span className="inline-flex items-center rounded-full bg-amber-400/15 px-2.5 py-0.5 text-[11px] font-mono font-semibold text-amber-300 border border-amber-400/30">
+                    Continuous Iteration
+                  </span>
+                </div>
+                <p className="mt-1 text-xs sm:text-sm text-neutral-300 max-w-2xl leading-relaxed">
+                  All Hurke Games titles are works in progress and actively updated. We welcome your feedback, balance thoughts, and new feature ideas. Have suggestions? Email us directly at{' '}
+                  <a
+                    href="mailto:hurkegames@gmail.com?subject=Hurke%20Games%20Feedback%20%26%20Suggestions"
+                    className="text-amber-400 font-semibold underline underline-offset-2 hover:text-amber-300 transition-colors"
+                  >
+                    hurkegames@gmail.com
+                  </a>
+                  .
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="mailto:hurkegames@gmail.com?subject=Hurke%20Games%20Feedback%20%26%20Suggestions"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-neutral-950 font-bold px-4 py-2.5 text-xs transition-all shadow-md shrink-0 group active:scale-95"
+            >
+              <Mail className="h-4 w-4 text-neutral-950" />
+              <span>Send Suggestions</span>
+            </a>
           </div>
 
           {/* Cards Grid */}

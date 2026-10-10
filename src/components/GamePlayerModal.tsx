@@ -84,8 +84,15 @@ export const GamePlayerModal: React.FC<GamePlayerModalProps> = ({
             <span className="text-neutral-300">{game.controls}</span>
           </div>
 
-          <div className="flex items-center gap-2 font-mono text-[11px] text-neutral-500">
-            <span>Hosted at {game.url.replace('https://', '')}</span>
+          <div className="flex items-center gap-3 font-mono text-[11px] text-neutral-400">
+            <span>In development</span>
+            <span className="text-neutral-600">/</span>
+            <a
+              href="mailto:hurkegames@gmail.com?subject=Hurke%20Games%20Feedback"
+              className="text-amber-400 hover:text-amber-300 underline underline-offset-2 transition-colors"
+            >
+              Email suggestions: hurkegames@gmail.com
+            </a>
           </div>
         </div>
 
