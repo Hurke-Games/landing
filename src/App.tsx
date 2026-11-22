@@ -102,9 +102,10 @@ export default function App() {
 
   // Filter logic
   const filteredGames = games.filter((game) => {
+    const genre = game.genre.toLowerCase();
     if (activeFilter === 'all') return true;
-    if (activeFilter === 'arcade') return game.genre.toLowerCase().includes('arcade') || game.genre.toLowerCase().includes('survival');
-    if (activeFilter === 'strategy') return game.genre.toLowerCase().includes('strategy') || game.genre.toLowerCase().includes('tactics') || game.genre.toLowerCase().includes('sci-fi') || game.genre.toLowerCase().includes('rts') || game.genre.toLowerCase().includes('survival') || game.genre.toLowerCase().includes('sim') || game.genre.toLowerCase().includes('political');
+    if (activeFilter === 'arcade') return genre.includes('arcade') || genre.includes('survival') || genre.includes('arena') || genre.includes('fighter');
+    if (activeFilter === 'strategy') return genre.includes('strategy') || genre.includes('tactics') || genre.includes('sci-fi') || genre.includes('rts') || genre.includes('survival') || genre.includes('sim') || genre.includes('political') || genre.includes('rpg');
     if (activeFilter === 'custom') return game.isCustom;
     return true;
   });

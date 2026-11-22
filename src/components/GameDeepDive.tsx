@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Play, Sparkles, Crosshair, Compass, Shield, Zap, Radio, Map, Activity, Hammer, Landmark, Briefcase, Scale } from 'lucide-react';
+import { ExternalLink, Play, Sparkles, Crosshair, Compass, Shield, Zap, Radio, Map, Activity, Hammer, Landmark, Briefcase, Scale, Swords, Flame, ShoppingBag, Building2, Navigation } from 'lucide-react';
 import { GameItem } from '../data/games';
 
 interface GameDeepDiveProps {
@@ -11,6 +11,8 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
   games,
   onPlayGame,
 }) => {
+  const mrMayor2 = games.find((g) => g.id === 'mr-mayor-2');
+  const pixelArena = games.find((g) => g.id === 'pixel-arena-mud-and-glory');
   const mrMayor = games.find((g) => g.id === 'mr-mayor');
   const zombieSurvivor = games.find((g) => g.id === 'zombie-survivor');
   const tankWars = games.find((g) => g.id === 'tank-wars');
@@ -36,14 +38,168 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
           </p>
         </div>
 
-        {/* Featured Breakdowns: 2x3 Grid for 6 Games */}
+        {/* Featured Breakdowns Grid */}
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
-          {/* Game 1: Mr. Mayor */}
+
+          {/* Game 1: Mr. Mayor 2.0 */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-amber-300 font-semibold">01. POLITICAL CITY POWER SIM</span>
+                <span className="text-sky-400 font-semibold">01. STREET & CITY BUILDER 2.0</span>
+                <span>GITHUB PAGES</span>
+              </div>
+              
+              <h3 className="font-heading text-2xl font-bold text-white">
+                Mr. Mayor 2.0
+              </h3>
+              
+              <p className="mt-2 text-sm text-neutral-300 leading-relaxed">
+                Explore the city on foot in side-scrolling view as Mayor Charles, turn 90° corners across avenues, enter buildings, and jump into the 2D city planning map.
+              </p>
+
+              {/* Core Mechanics List */}
+              <div className="mt-6 space-y-3">
+                <div className="flex items-start gap-3 text-xs text-neutral-300">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                    <Navigation className="h-3.5 w-3.5" />
+                  </div>
+                  <div>
+                    <strong className="text-white block font-medium">360° Grid Street Exploration:</strong>
+                    Walk sidewalks with [A / D], cross at crosswalks with [W / S], and rotate 90° onto cross streets with [Q / R] while tracking your live top-down minimap.
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 text-xs text-neutral-300">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                    <Building2 className="h-3.5 w-3.5" />
+                  </div>
+                  <div>
+                    <strong className="text-white block font-medium">City Hall & Commercial Properties:</strong>
+                    Step inside City Hall, bakeries, and grocery stores with [E] to manage treasury funds, inspect lots, or run Business Man property upgrades.
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 text-xs text-neutral-300">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                    <Hammer className="h-3.5 w-3.5" />
+                  </div>
+                  <div>
+                    <strong className="text-white block font-medium">Holographic Build Dock & Lighting:</strong>
+                    Quick-build street lots with the dock hammer, open the isometric city planner, switch day/night lighting, or toggle Moonwalk Mode.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-neutral-800/80 flex flex-col gap-3">
+              <span className="font-mono text-xs text-neutral-400">
+                Desktop Keyboard & Mouse / Mobile Web
+              </span>
+              {mrMayor2 && (
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => onPlayGame(mrMayor2)}
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg border border-neutral-700 bg-neutral-800 px-3 py-1.5 text-xs font-semibold text-neutral-200 hover:text-white hover:border-neutral-600 transition-colors"
+                  >
+                    <Play className="h-3 w-3 text-amber-400 fill-current" />
+                    <span>Play</span>
+                  </button>
+                  <a
+                    href={mrMayor2.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg bg-amber-400 px-3.5 py-1.5 text-xs font-bold text-neutral-950 hover:bg-amber-300 transition-colors"
+                  >
+                    <span>Launch</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Game 2: Pixel Arena: Mud & Glory */}
+          <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
+            <div>
+              <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
+                <span className="text-orange-400 font-semibold">02. ARENA FIGHTER RPG</span>
+                <span>GITHUB PAGES</span>
+              </div>
+              
+              <h3 className="font-heading text-2xl font-bold text-white">
+                Pixel Arena: Mud & Glory
+              </h3>
+              
+              <p className="mt-2 text-sm text-neutral-300 leading-relaxed">
+                Step past the Wooden Gates of Glory in a pixel-art turn-based gladiator RPG built for both PC keyboard hotkeys and Android touch controls.
+              </p>
+
+              {/* Core Mechanics List */}
+              <div className="mt-6 space-y-3">
+                <div className="flex items-start gap-3 text-xs text-neutral-300">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-orange-500/10 text-orange-400 border border-orange-500/20">
+                    <Swords className="h-3.5 w-3.5" />
+                  </div>
+                  <div>
+                    <strong className="text-white block font-medium">3 Races & 6 Gladiator Classes:</strong>
+                    Roll Human, Orc, or Dark Elf fighters across Rogue, Archer, Mage, Druid, Warrior, and Barbarian builds with distinct passives and specials.
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 text-xs text-neutral-300">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-orange-500/10 text-orange-400 border border-orange-500/20">
+                    <ShoppingBag className="h-3.5 w-3.5" />
+                  </div>
+                  <div>
+                    <strong className="text-white block font-medium">Turn-Based Mud Pit & Gear Shop:</strong>
+                    Combine armor-piercing volleys, Shield Bash stuns, Arcane Focus spells, or Druid beast summons, then resupply at Honest Barnaby&apos;s wagon.
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 text-xs text-neutral-300">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-orange-500/10 text-orange-400 border border-orange-500/20">
+                    <Flame className="h-3.5 w-3.5" />
+                  </div>
+                  <div>
+                    <strong className="text-white block font-medium">Persistent Warrior Spirit Upgrades:</strong>
+                    Earn Warrior Spirit across runs to unlock permanent arena upgrades alongside customizable key bindings and save slots.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-neutral-800/80 flex flex-col gap-3">
+              <span className="font-mono text-xs text-neutral-400">
+                PC Keyboard & Android Touch Ready
+              </span>
+              {pixelArena && (
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => onPlayGame(pixelArena)}
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg border border-neutral-700 bg-neutral-800 px-3 py-1.5 text-xs font-semibold text-neutral-200 hover:text-white hover:border-neutral-600 transition-colors"
+                  >
+                    <Play className="h-3 w-3 text-amber-400 fill-current" />
+                    <span>Play</span>
+                  </button>
+                  <a
+                    href={pixelArena.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg bg-amber-400 px-3.5 py-1.5 text-xs font-bold text-neutral-950 hover:bg-amber-300 transition-colors"
+                  >
+                    <span>Launch</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Game 3: Mr. Mayor */}
+          <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
+            <div>
+              <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
+                <span className="text-amber-300 font-semibold">03. POLITICAL CITY POWER SIM</span>
                 <span>GITHUB PAGES</span>
               </div>
               
@@ -116,11 +272,11 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
             </div>
           </div>
 
-          {/* Game 2: Zombie Survivor */}
+          {/* Game 4: Zombie Survivor */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-red-400 font-semibold">02. TACTICAL SURVIVAL SIM</span>
+                <span className="text-red-400 font-semibold">04. TACTICAL SURVIVAL SIM</span>
                 <span>GITHUB PAGES</span>
               </div>
               
@@ -193,11 +349,11 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
             </div>
           </div>
 
-          {/* Game 3: Tank Wars */}
+          {/* Game 5: Tank Wars */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-emerald-400 font-semibold">03. 32-BIT TURN-BASED TACTICS</span>
+                <span className="text-emerald-400 font-semibold">05. 32-BIT TURN-BASED TACTICS</span>
                 <span>GITHUB PAGES</span>
               </div>
               
@@ -270,11 +426,11 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
             </div>
           </div>
 
-          {/* Game 4: Fleet Command */}
+          {/* Game 6: Fleet Command */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-cyan-400 font-semibold">04. TACTICAL REAL-TIME RTS</span>
+                <span className="text-cyan-400 font-semibold">06. TACTICAL REAL-TIME RTS</span>
                 <span>GITHUB PAGES</span>
               </div>
               
@@ -347,11 +503,11 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
             </div>
           </div>
 
-          {/* Game 5: Galactic Clash */}
+          {/* Game 7: Galactic Clash */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-amber-400 font-semibold">05. 4X TACTICAL SPACE</span>
+                <span className="text-amber-400 font-semibold">07. 4X TACTICAL SPACE</span>
                 <span>GITHUB PAGES</span>
               </div>
               
@@ -424,11 +580,11 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
             </div>
           </div>
 
-          {/* Game 6: Poop Fly */}
+          {/* Game 8: Poop Fly */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-amber-400 font-semibold">06. SIDE-SCROLLING SURVIVAL</span>
+                <span className="text-amber-400 font-semibold">08. SIDE-SCROLLING SURVIVAL</span>
                 <span>GITHUB PAGES</span>
               </div>
               

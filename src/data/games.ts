@@ -28,6 +28,32 @@ export interface GameItem {
 
 export const INITIAL_GAMES: GameItem[] = [
   {
+    id: 'mr-mayor-2',
+    title: 'Mr. Mayor 2.0',
+    url: 'https://hurke-games.github.io/Mr.-Mayor-ver-2.0/',
+    tagline: 'Side-Scrolling Street Exploration & 2D Isometric City Builder',
+    description: 'Walk the streets of Mayor Charles’s city in side-scrolling view, enter City Hall and local shops, turn 90° street corners, and seamlessly switch to the 2D city planning map.',
+    detailedDescription: 'An expanded 2.0 evolution of Mr. Mayor combining side-scrolling street exploration with a 2D isometric city builder and live top-down city minimap. Patrol avenues on foot as Mayor Charles, cross crosswalks, inspect or upgrade commercial properties like bakeries and grocery stores, toggle day/night lighting, and step into City Hall to manage treasury funds, zoning, and urban growth.',
+    genre: 'Political City Sim',
+    releaseYear: '2026',
+    platforms: ['Desktop Browser', 'Keyboard & Mouse', 'Mobile Web'],
+    controls: 'A / D: Walk Street; W / S / Click: Crosswalk; E: Enter Building; Q / R: Turn 90° Corner; Dock buttons for Quick-Build & City Map',
+    image: `${import.meta.env.BASE_URL}assets/aistudio/image_9c47d3eb.png`,
+  },
+  {
+    id: 'pixel-arena-mud-and-glory',
+    title: 'Pixel Arena: Mud & Glory',
+    url: 'https://hurke-games.github.io/PixelArenaMud-Glory/',
+    tagline: 'Retro Pixel Turn-Based Arena Fighter & Gladiator RPG',
+    description: 'Create a custom gladiator across 3 races and 6 classes, gear up at Honest Barnaby’s wagon, battle rivals in the mud pit, and unlock permanent Warrior Spirit upgrades.',
+    detailedDescription: 'A pixel-art turn-based arena fighter RPG built for both PC keyboard and Android touch controls. Choose from Human, Orc, or Dark Elf lineages and six distinct classes—Rogue, Archer, Mage, Druid, Warrior, or Barbarian—each with unique passives, combat specials, and summons. Upgrade weapons, armor, and potions between bouts and spend persistent Warrior Spirit on permanent meta-upgrades.',
+    genre: 'Arena Fighter RPG',
+    releaseYear: '2026',
+    platforms: ['Desktop Browser', 'PC Keyboard', 'Android Touch'],
+    controls: 'Keyboard shortcuts or Touch / Click controls for turn-based combat skills, spells, items, and navigation',
+    image: `${import.meta.env.BASE_URL}assets/aistudio/image_d69c7eef.png`,
+  },
+  {
     id: 'mr-mayor',
     title: 'Mr. Mayor',
     url: 'https://hurke-games.github.io/Mr-Mayor/',
@@ -151,7 +177,7 @@ export function generateFullStandaloneHtml(games: GameItem[]): string {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hurke Games | Indie Web Games Studio</title>
-  <meta name="description" content="Explore browser games by Hurke Games including Mr. Mayor, Zombie Survivor, Tank Wars, Fleet Command, Poop Fly, and Galactic Clash.">
+  <meta name="description" content="Explore browser games by Hurke Games including Mr. Mayor 2.0, Pixel Arena: Mud & Glory, Mr. Mayor, Zombie Survivor, Tank Wars, Fleet Command, Poop Fly, and Galactic Clash.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
