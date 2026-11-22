@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hurke Games</title>
+    <script>
+      // Single Page Application redirect for GitHub Pages
+      // Keeps query parameters and hashes intact while routing to the base landing page
+      sessionStorage.redirect = location.href;
+      location.replace('/landing/');
+    </script>
+    <meta http-equiv="refresh" content="0;URL='/landing/'" />
+  </head>
+  <body style="background-color: #0a0a0a; color: #ededed; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+    <p>Redirecting to Hurke Games...</p>
+  </body>
+</html>
