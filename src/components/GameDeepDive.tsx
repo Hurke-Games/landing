@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Play, Sparkles, Crosshair, Compass, Shield, Zap, Radio, Map, Activity, Hammer, Landmark, Briefcase, Scale, Swords, Flame, ShoppingBag, Building2, Navigation } from 'lucide-react';
+import { ExternalLink, Play, Sparkles, Crosshair, Compass, Shield, Zap, Radio, Map, Activity, Hammer, Landmark, Briefcase, Scale, Swords, Flame, ShoppingBag, Building2, Navigation, Anchor, Gift } from 'lucide-react';
 import { GameItem } from '../data/games';
 
 interface GameDeepDiveProps {
@@ -11,6 +11,7 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
   games,
   onPlayGame,
 }) => {
+  const squareEelStapler = games.find((g) => g.id === 'square-eel-stapler');
   const mrMayor2 = games.find((g) => g.id === 'mr-mayor-2');
   const pixelArena = games.find((g) => g.id === 'pixel-arena-mud-and-glory');
   const mrMayor = games.find((g) => g.id === 'mr-mayor');
@@ -41,11 +42,88 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
         {/* Featured Breakdowns Grid */}
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          {/* Game 1: Mr. Mayor 2.0 */}
+          {/* Game 1: Square Eel Stapler */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-sky-400 font-semibold">01. STREET & CITY BUILDER 2.0</span>
+                <span className="text-fuchsia-400 font-semibold">01. PROCEDURAL 2D ARCADE</span>
+                <span>GITHUB PAGES</span>
+              </div>
+              
+              <h3 className="font-heading text-2xl font-bold text-white">
+                Square Eel Stapler
+              </h3>
+              
+              <p className="mt-2 text-sm text-neutral-300 leading-relaxed">
+                Hunt square eels by night harpoon, cast shoreline hooks, staple your haul in the banquet hall, and party into the celebration finale.
+              </p>
+
+              {/* Core Mechanics List */}
+              <div className="mt-6 space-y-3">
+                <div className="flex items-start gap-3 text-xs text-neutral-300">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20">
+                    <Anchor className="h-3.5 w-3.5" />
+                  </div>
+                  <div>
+                    <strong className="text-white block font-medium">3 Coastal Territories:</strong>
+                    Progress from Sleepy Bait Dock to Sunburn Boardwalk and Sovereign Yacht Club with harpoons, shoreline hooks, and beach nets [N].
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 text-xs text-neutral-300">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20">
+                    <Gift className="h-3.5 w-3.5" />
+                  </div>
+                  <div>
+                    <strong className="text-white block font-medium">Banquet Stapling & Mystery Chests:</strong>
+                    Deliver hauls to the dining hall for upgrades, collect diamonds and dice, and pull 10-tier Mystery Chests between hunts.
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 text-xs text-neutral-300">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20">
+                    <Zap className="h-3.5 w-3.5" />
+                  </div>
+                  <div>
+                    <strong className="text-white block font-medium">Dog Alerts & Celebration Finale:</strong>
+                    Brace for sudden turn-based Dog battle interruptions and unlock the nonstop confetti celebration ceremony.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-neutral-800/80 flex flex-col gap-3">
+              <span className="font-mono text-xs text-neutral-400">
+                Desktop Keyboard / Mouse & On-Screen Touch
+              </span>
+              {squareEelStapler && (
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => onPlayGame(squareEelStapler)}
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg border border-neutral-700 bg-neutral-800 px-3 py-1.5 text-xs font-semibold text-neutral-200 hover:text-white hover:border-neutral-600 transition-colors"
+                  >
+                    <Play className="h-3 w-3 text-amber-400 fill-current" />
+                    <span>Play</span>
+                  </button>
+                  <a
+                    href={squareEelStapler.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-lg bg-amber-400 px-3.5 py-1.5 text-xs font-bold text-neutral-950 hover:bg-amber-300 transition-colors"
+                  >
+                    <span>Launch</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Game 2: Mr. Mayor 2.0 */}
+          <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
+            <div>
+              <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
+                <span className="text-sky-400 font-semibold">02. STREET & CITY BUILDER 2.0</span>
                 <span>GITHUB PAGES</span>
               </div>
               
@@ -118,11 +196,11 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
             </div>
           </div>
 
-          {/* Game 2: Pixel Arena: Mud & Glory */}
+          {/* Game 3: Pixel Arena: Mud & Glory */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-orange-400 font-semibold">02. ARENA FIGHTER RPG</span>
+                <span className="text-orange-400 font-semibold">03. ARENA FIGHTER RPG</span>
                 <span>GITHUB PAGES</span>
               </div>
               
@@ -195,11 +273,11 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
             </div>
           </div>
 
-          {/* Game 3: Mr. Mayor */}
+          {/* Game 4: Mr. Mayor */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-amber-300 font-semibold">03. POLITICAL CITY POWER SIM</span>
+                <span className="text-amber-300 font-semibold">04. POLITICAL CITY POWER SIM</span>
                 <span>GITHUB PAGES</span>
               </div>
               
@@ -272,11 +350,11 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
             </div>
           </div>
 
-          {/* Game 4: Zombie Survivor */}
+          {/* Game 5: Zombie Survivor */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-red-400 font-semibold">04. TACTICAL SURVIVAL SIM</span>
+                <span className="text-red-400 font-semibold">05. TACTICAL SURVIVAL SIM</span>
                 <span>GITHUB PAGES</span>
               </div>
               
@@ -349,11 +427,11 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
             </div>
           </div>
 
-          {/* Game 5: Tank Wars */}
+          {/* Game 6: Tank Wars */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-emerald-400 font-semibold">05. 32-BIT TURN-BASED TACTICS</span>
+                <span className="text-emerald-400 font-semibold">06. 32-BIT TURN-BASED TACTICS</span>
                 <span>GITHUB PAGES</span>
               </div>
               
@@ -426,11 +504,11 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
             </div>
           </div>
 
-          {/* Game 6: Fleet Command */}
+          {/* Game 7: Fleet Command */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-cyan-400 font-semibold">06. TACTICAL REAL-TIME RTS</span>
+                <span className="text-cyan-400 font-semibold">07. TACTICAL REAL-TIME RTS</span>
                 <span>GITHUB PAGES</span>
               </div>
               
@@ -503,11 +581,11 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
             </div>
           </div>
 
-          {/* Game 7: Galactic Clash */}
+          {/* Game 8: Galactic Clash */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-amber-400 font-semibold">07. 4X TACTICAL SPACE</span>
+                <span className="text-amber-400 font-semibold">08. 4X TACTICAL SPACE</span>
                 <span>GITHUB PAGES</span>
               </div>
               
@@ -580,11 +658,11 @@ export const GameDeepDive: React.FC<GameDeepDiveProps> = ({
             </div>
           </div>
 
-          {/* Game 8: Poop Fly */}
+          {/* Game 9: Poop Fly */}
           <div className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/40 p-6 sm:p-7 backdrop-blur-sm">
             <div>
               <div className="flex items-center justify-between text-xs font-mono text-neutral-400 mb-3">
-                <span className="text-amber-400 font-semibold">08. SIDE-SCROLLING SURVIVAL</span>
+                <span className="text-amber-400 font-semibold">09. SIDE-SCROLLING SURVIVAL</span>
                 <span>GITHUB PAGES</span>
               </div>
               
