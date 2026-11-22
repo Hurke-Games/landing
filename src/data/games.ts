@@ -4,7 +4,6 @@
  * Simply copy one of the objects below and append it to INITIAL_GAMES!
  */
 
-import poopFlyImg from '../assets/images/poop_fly_screenshot.svg';
 import galacticClashImg from '../assets/images/galactic_clash_screenshot.svg';
 import fleetCommandImg from '../assets/images/fleet_command_screenshot_1790979237310.jpg';
 import tankWarsImg from '../assets/images/tank_wars_screenshot_1791080912049.jpg';
@@ -116,7 +115,7 @@ export const INITIAL_GAMES: GameItem[] = [
     releaseYear: '2026',
     platforms: ['Desktop', 'Mobile Touch', 'Keyboard / Tap'],
     controls: 'Space / Tap to flap wings & gain altitude; Key / Button to drop poop on enemies',
-    image: poopFlyImg,
+    image: `${import.meta.env.BASE_URL}assets/aistudio/image_8768c0ff.png`,
   },
   {
     id: 'galactic-clash',
